@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey . '&response=' . $captchaResponse;
     $response = file_get_contents($verifyUrl);
     $responseKeys = json_decode($response, true);
-    echo $response;
+    
 
     if (!$responseKeys['success']) {
         echo "<div class='error-message'>reCAPTCHA verification failed. Please try again.</div>";
