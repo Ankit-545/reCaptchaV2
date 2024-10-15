@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $secretKey = "6Lf4NV8qAAAAAIBzOd-yb-qQCYSiM5XH08vBGa7a";
+    $secretKey = getenv("RECAPTCHA_SECRET_KEY");
     $captchaResponse = $_POST['g-recaptcha-response'];
 
     if (!$captchaResponse) {
